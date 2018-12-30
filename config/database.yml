@@ -20,7 +20,7 @@ test:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: test
-  host: mysql
+  host: <%= ENV.fetch("DB_HOST"){ 'mysql' } %>
   database: simpleerr_test
 production:
   adapter: mysql2
