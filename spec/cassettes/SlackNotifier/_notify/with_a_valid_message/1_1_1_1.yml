@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://hooks.slack.com/services/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
+    body:
+      encoding: UTF-8
+      string: '{"text":"Test Message"}'
+    headers:
+      User-Agent:
+      - Faraday v0.15.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '22'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 30 Dec 2018 05:07:05 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Via:
+      - haproxy-www-fs7p
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 18105b2f82ba7107f9e9f70c78017389.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - GYNkO4t-yg7CAj2LZdwuJy1Xh7IdZiGrfBpAsf5NDpH9-h5TOBu5eg==
+    body:
+      encoding: ASCII-8BIT
+      string: ok
+    http_version: 
+  recorded_at: Sun, 30 Dec 2018 05:07:05 GMT
+recorded_with: VCR 4.0.0
