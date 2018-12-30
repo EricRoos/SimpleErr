@@ -10,7 +10,7 @@ jobs:
        - image: circleci/ruby:2.5.1-node-browsers
          environment:
           RAILS_ENV: test
-          DB_HOST: localhost
+          DB_HOST: 0.0.0.0
        - image: mysql
          environment:
           MYSQL_ROOT_PASSWORD: test
