@@ -71,6 +71,10 @@ jobs:
                             --format progress \
                             --format documentation\
                             $TEST_FILES
+      - run:
+          name: run cukes
+          command: |
+            bundle exec cucumber
 
       # collect reports
       - store_test_results:
