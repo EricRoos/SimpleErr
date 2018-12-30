@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sun, 30 Dec 2018 05:17:59 GMT
+      - Sun, 30 Dec 2018 14:43:04 GMT
       Server:
       - Apache
       Strict-Transport-Security:
@@ -41,16 +41,16 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Via:
-      - haproxy-www-fwr9
+      - haproxy-www-4rku
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 d0d7b8bbb3461a6cde78c9ba2a057ed7.cloudfront.net (CloudFront)
+      - 1.1 1645a9d28193126ae7c151e9fce40ee9.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - j-o_gMqzK9ryQ-fruoUcT4EWPB0kJcf1WV_yq11N5G6F_2UXBEI9aw==
+      - m6tv7QMnzdHbNCC1MQ3L499bql1GPiKtqJnVqjSyVMbyVFu2-CU6yQ==
     body:
       encoding: ASCII-8BIT
       string: ok
     http_version: 
-  recorded_at: Sun, 30 Dec 2018 05:17:59 GMT
+  recorded_at: Sun, 30 Dec 2018 14:43:04 GMT
 recorded_with: VCR 4.0.0
