@@ -1,0 +1,32 @@
+---
+default:
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: 
+  host: localhost
+development:
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: test
+  host: mysql
+  database: simpleerr_development
+test:
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: test
+  host: mysql
+  database: simpleerr_test
+production:
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: simpleerr
+  password: "<%= ENV['SIMPLEERR_DATABASE_PASSWORD'] %>"
+  host: localhost
+  database: simpleerr_production
