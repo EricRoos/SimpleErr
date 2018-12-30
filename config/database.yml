@@ -14,7 +14,7 @@ development:
   password: test
   host: 0.0.0.0
   database: simpleerr_development
-test:
+test: &test
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -30,3 +30,6 @@ production:
   password: "<%= ENV['SIMPLEERR_DATABASE_PASSWORD'] %>"
   host: localhost
   database: simpleerr_production
+
+cucumber:
+  <<: *test
