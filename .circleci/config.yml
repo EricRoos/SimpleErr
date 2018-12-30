@@ -9,11 +9,15 @@ jobs:
       # specify the version you desire here
        - image: circleci/ruby:2.5.1-node-browsers
          environment:
+          RAILS_DB_USERNAME: root
+          RAILS_DB_PASSWORD: ''
+          DB_HOST: 127.0.0.1
           RAILS_ENV: test
-          DB_HOST: localhost
-       - image: circleci/mysql:5.6
+       - image: circleci/mysql:5.7-ram
          environment:
-          MYSQL_ROOT_PASSWORD: test
+          MYSQL_USER: root
+          MYSQL_DB: simpleerr_test
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
