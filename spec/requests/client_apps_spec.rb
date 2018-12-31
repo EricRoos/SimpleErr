@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "ClientApps", type: :request do
+  let(:current_user) {
+    FactoryBot.create(:user)
+  }
+
+  before :each do
+    sign_in current_user if current_user
+  end
   describe "GET /client_apps" do
     it "works! (now write some real specs)" do
       get client_apps_path

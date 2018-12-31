@@ -1,6 +1,6 @@
 class ClientAppsController < ApplicationController
   before_action :set_client_app, only: [:show, :edit, :update, :destroy]
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
 
   # GET /client_apps
   # GET /client_apps.json

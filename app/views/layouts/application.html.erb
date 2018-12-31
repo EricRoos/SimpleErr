@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
@@ -15,7 +16,7 @@
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">SimpleErr</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <% if user_signed_in? %>
+          <% unless  user_signed_in? %>
             <li><%= link_to 'Log In', new_user_session_path %> </li>
           <% else %>
             <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete  %></li>

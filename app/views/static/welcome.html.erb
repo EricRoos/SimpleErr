@@ -1,3 +1,15 @@
 <div class='container'>
-  <h1>Dashboard</h1>
+  <ul class="collection">
+    <li class="collection-item avatar">
+      <%= link_to new_client_app_path do %>
+        <i class="material-icons circle">add</i>
+        <span class="title">Add App</span>
+      <% end %>
+    </li>
+    <% @apps.each do |app| %>
+      <li class="collection-item">
+        <%= link_to app.name, app %>
+      </li>
+    <% end %>
+  </ul>
 </div>

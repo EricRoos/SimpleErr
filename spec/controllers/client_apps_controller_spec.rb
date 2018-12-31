@@ -24,14 +24,20 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe ClientAppsController, type: :controller do
+  let(:current_user) {
+    FactoryBot.create(:user)
+  }
 
+  before :each do
+    sign_in current_user if current_user
+  end
   # This should return the minimal set of attributes required to create a valid
   # ClientApp. As you add validations to ClientApp, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     {
       name: 'test name',
-      user_id: FactoryBot.create(:user).id
+      user_id: current_user.id
     }
   }
 
