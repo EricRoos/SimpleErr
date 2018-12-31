@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @client_app.user %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @client_app.name %>
+</p>
+
+<%= link_to 'Edit', edit_client_app_path(@client_app) %> |
+<%= link_to 'Back', client_apps_path %>

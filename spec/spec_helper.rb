@@ -1,4 +1,6 @@
 require 'vcr'
+require 'factory_bot'
+require 'devise'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
@@ -23,6 +25,9 @@ end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+  #config.include Devise::Test::ControllerHelpers, type: :controller
+  #config.include Devise::TestHelpers, type: :controller
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
