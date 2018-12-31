@@ -59,6 +59,7 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # run tests!
+      - run: yarn install
       - run:
           name: run tests
           command: |
@@ -71,7 +72,6 @@ jobs:
                             --format progress \
                             --format documentation\
                             $TEST_FILES
-      - run: yarn install
       - run: NODE_ENV=test bundle exec rails webpacker:compile
       - run:
           name: run cukes
