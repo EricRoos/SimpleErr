@@ -83,7 +83,7 @@ jobs:
       - run:
           name: build image
           command: |
-            docker build . -t ericroos13/simpleerr:latest
+            docker build . -t simpleerr:latest
       - run:
           name: tag image
           command: |
