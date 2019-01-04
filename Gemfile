@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'simple_err_rails', github: 'EricRoos/SimpleErr-Rails'
+
 ruby '2.5.1'
 gem 'webpacker', '~> 3.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

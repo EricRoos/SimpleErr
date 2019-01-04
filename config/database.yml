@@ -26,9 +26,9 @@ production:
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: simpleerr
+  username: root
   password: "<%= ENV['SIMPLEERR_DATABASE_PASSWORD'] %>"
-  host: localhost
+  host: <%= ENV.fetch("DB_HOST"){ '0.0.0.0' } %>
   database: simpleerr_production
 
 cucumber:

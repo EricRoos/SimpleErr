@@ -77,6 +77,10 @@ jobs:
           name: run cukes
           command: |
             bundle exec cucumber
+      - run:
+          name: build image
+          command: |
+            docker build . -t ericroos13/simpleerr:latest
 
       # collect reports
       - store_test_results:

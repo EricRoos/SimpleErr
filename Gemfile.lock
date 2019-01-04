@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/EricRoos/SimpleErr-Rails.git
+  revision: 6affa66c04f11e3499ae10832071ccf4afbbafed
+  specs:
+    simple_err_rails (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -299,6 +305,7 @@ DEPENDENCIES
   rspec_junit_formatter
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_err_rails!
   spring
   spring-watcher-listen (~> 2.0.0)
   timecop
