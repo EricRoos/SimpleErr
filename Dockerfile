@@ -8,6 +8,5 @@ ENV RAILS_LOG_TO_STDOUT "1"
 RUN bundle install
 COPY . /home/circleci/simpleerr
 RUN sudo chown -R circleci /home/circleci/simpleerr
-RUN rm -r /home/circleci/simpleerr/tmp
 RUN RAILS_MASTER_KEY=64fea545a5d51b743579b9d0a384ac6f bundle exec rake assets:clean
 RUN RAILS_MASTER_KEY=64fea545a5d51b743579b9d0a384ac6f bundle exec rake assets:precompile
