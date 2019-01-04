@@ -84,6 +84,14 @@ jobs:
           name: build image
           command: |
             docker build . -t ericroos13/simpleerr:latest
+      - run:
+          name: tag image
+          command: |
+            docker tag simpleerr:latest ericroos13/simpleerr:latest
+      - run:
+          name: push image
+          command: |
+            docker push ericroos13/simpleerr:latest
 
       # collect reports
       - store_test_results:
