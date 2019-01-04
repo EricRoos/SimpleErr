@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe ClientAppError, type: :model do
   describe 'after_create' do
     describe 'the called methods' do
-      subject { described_class.new }
+      let(:client_app){ClientApp.create}
+      subject { described_class.new(client_app: client_app, message: 'test', exception_name: 'runtimeerror') }
       before do
         expect(subject).to receive(:notify_parties)
         subject.save
