@@ -1,14 +1,89 @@
-<p id="notice"><%= notice %></p>
+<div class='container'>
+  <div class="row">
+    <div class='s12'>
+      <nav>
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <%= link_to "Apps", client_apps_path, class: 'breadcrumb' %>
+            <a href="#!" class="breadcrumb"><%= @client_app.name %></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @client_app.user %>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client_app.name %>
-</p>
+  <div class="row">
 
-<%= link_to 'Edit', edit_client_app_path(@client_app) %> |
-<%= link_to 'Back', client_apps_path %>
+    <div id='client-app-profile-nav' class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+      <ul>
+        <li><%= link_to "Dashboard", '#' %></li>
+        <li><%= link_to "Error History", '#' %></li>
+      </ul>
+      <hr/>
+      <ul>
+        <li><%= link_to "Integrations", '#' %></li>
+        <li><%= link_to "Modify App", edit_client_app_path(@client_app) %></li>
+      </ul>
+    </div>
+
+    <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+      <div class="row">
+        <div class="col m6 s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Recent Errors</span>
+              <ul>
+                <% @recent_errors.each do |error| %>
+                  <li><%= error %></li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="#">View All</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m6 s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Error Rate</span>
+              <div class='text-center'>
+              <h1>3%</h1>
+              </div>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m6 s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Error Rate</span>
+              <div class='text-center'>
+              <h1>3%</h1>
+              </div>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m6 s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

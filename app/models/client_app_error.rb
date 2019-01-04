@@ -1,7 +1,12 @@
 class ClientAppError < ApplicationRecord
   include ActionView::Helpers::DateHelper
+  belongs_to :client_app
 
   after_create :notify_parties
+
+  scope :recent, -> { where("created_at >= ? ", Time.current.utc - 5.days).order("created_at desc") }
+
+  validates_presence_of :message, :exception_name
 
   def to_s(timezone = 'America/Chicago')
     "#{exception_name} triggered #{time_ago_in_words(created_at.in_time_zone(timezone))} ago"

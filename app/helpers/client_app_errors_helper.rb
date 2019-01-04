@@ -1,0 +1,2 @@
+module ClientAppErrorsHelper
+end

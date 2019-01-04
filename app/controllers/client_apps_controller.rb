@@ -11,6 +11,7 @@ class ClientAppsController < ApplicationController
   # GET /client_apps/1
   # GET /client_apps/1.json
   def show
+    @recent_errors = @client_app.client_app_errors.recent
   end
 
   # GET /client_apps/new

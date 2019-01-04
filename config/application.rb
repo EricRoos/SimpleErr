@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require './lib/simpleerr_middleware'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,5 +17,8 @@ module Simpleerr
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.autoload_paths << Rails.root.join('app/notifiers')
+    config.autoload_paths << Rails.root.join('lib')
+
+    config.middleware.use ::SimpleerrMiddleware
   end
 end

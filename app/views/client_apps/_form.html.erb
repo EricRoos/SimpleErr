@@ -1,21 +1,23 @@
 <%= form_with(model: client_app, local: true) do |form| %>
   <% if client_app.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(client_app.errors.count, "error") %> prohibited this client_app from being saved:</h2>
-
-      <ul>
-      <% client_app.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+    <div class='row'>
+      <div id="col s12">
+        <ul>
+        <% client_app.errors.full_messages.each do |message| %>
+          <li class='red-text'><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <%= form.hidden_field :user_id %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class='row'>
+    <div class='input-field col s12'>
+      <%= form.text_field :name, class: 'validate' %>
+      <%= form.label :name %>
+      <span class="helper-text" data-error="wrong">* Required</span>
+    </div>
   </div>
 
   <div class="actions">
