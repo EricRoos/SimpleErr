@@ -77,6 +77,8 @@ jobs:
           name: run cukes
           command: |
             bundle exec cucumber
+      - run: |
+         docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
           name: build image
           command: |
