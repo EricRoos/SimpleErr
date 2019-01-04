@@ -77,6 +77,7 @@ jobs:
           name: run cukes
           command: |
             bundle exec cucumber
+      - setup_remote_docker
       - run: |
          docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
