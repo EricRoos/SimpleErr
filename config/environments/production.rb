@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.action_controller.forgery_protection_origin_check = false
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
