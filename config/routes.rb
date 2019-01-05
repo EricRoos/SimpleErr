@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :client_apps do
+    member do
+      get 'integrations', to: 'integrations#index'
+    end
+    resources :app_tokens
     resources :client_app_errors
   end
   devise_for :users

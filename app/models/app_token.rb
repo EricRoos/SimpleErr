@@ -6,5 +6,4 @@ class AppToken < ApplicationRecord
   def init_token
     self.expires_at = Time.current + 1.year
   end
-
 end
