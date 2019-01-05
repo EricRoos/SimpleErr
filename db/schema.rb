@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_03_231609) do
+ActiveRecord::Schema.define(version: 2019_01_05_031145) do
+
+  create_table "app_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "client_app_id"
+    t.string "token"
+    t.datetime "expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_app_id"], name: "index_app_tokens_on_client_app_id"
+  end
 
   create_table "client_app_errors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "exception_name"
@@ -42,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_01_03_231609) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "app_tokens", "client_apps"
   add_foreign_key "client_app_errors", "client_apps"
   add_foreign_key "client_apps", "users"
 end
