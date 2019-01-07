@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec_junit_formatter'
   gem 'rubocop'
+  gem 'simplecov', require: false
 end
 
 group :development do
