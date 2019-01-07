@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'app_tokens/create'
+  get 'app_tokens/destry'
   resources :client_apps do
     member do
       get 'integrations', to: 'integrations#index'

@@ -1,0 +1,2 @@
+module AppTokensHelper
+end

@@ -15,6 +15,7 @@ RSpec.describe AppToken, type: :model do
       Timecop.return
     end
 
+    
     describe 'the app token' do
       subject { app_token }
       it { is_expected.to have_attributes(token: a_string_matching(/.+/)) }

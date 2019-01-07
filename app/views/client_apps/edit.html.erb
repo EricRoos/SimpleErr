@@ -1,6 +1,22 @@
-<h1>Editing Client App</h1>
+<%= render 'client_apps/profile' do %>
+  <div class="row">
+    <div class="col s12">
+      <h5>Edit Details</h5>
+      <%= render 'form', client_app: @client_app %>
+    </div>
+    <div class="col s12">
+      <h5>App Token</h5>
+      <% if @client_app.app_tokens.last %>
+        <div>
+          <pre><%= @client_app.app_tokens.last.token %></pre>
+        </div>
+        <div>
+          <%= link_to 'Refresh', client_app_app_token_path(@client_app, @client_app.app_tokens.last), method: :delete, class: 'btn' %>
+        </div>
+      <% else %>
+        <%= link_to 'Generate Token', client_app_app_tokens_path(@client_app), method: :post, class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 
-<%= render 'form', client_app: @client_app %>
-
-<%= link_to 'Show', @client_app %> |
-<%= link_to 'Back', client_apps_path %>

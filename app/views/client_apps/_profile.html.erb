@@ -1,0 +1,37 @@
+<% breadcrumbs ||= [] %>
+<% breadcrumbs.unshift({url: client_app_path(@client_app), text: @client_app.name}) %>
+<div class='container'>
+  <div class="row">
+    <div class='s12'>
+      <nav>
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <%= link_to "Apps", client_apps_path, class: 'breadcrumb' %>
+            <% breadcrumbs.each do |breadcrumb| %>
+              <%= link_to breadcrumb[:text], breadcrumb[:url], class: 'breadcrumb' %>
+            <% end %>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    <div id='client-app-profile-nav' class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+      <ul>
+        <li><%= link_to "Dashboard", @client_app %></li>
+        <li><%= link_to "Error History", '#' %></li>
+      </ul>
+      <hr/>
+      <ul>
+        <li><%= link_to 'Integrations', integrations_client_app_path(@client_app) %></li>
+        <li><%= link_to "Modify App", edit_client_app_path(@client_app) %></li>
+      </ul>
+    </div>
+    <div id='client-app-profile-section' class="col s12 m8 l9"> <!-- Note that "m4 l3" was added -->
+      <%= yield %>
+    </div>
+  </div>
+</div>
