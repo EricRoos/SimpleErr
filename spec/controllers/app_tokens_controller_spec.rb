@@ -1,18 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe AppTokensController, type: :controller do
-
-  describe "GET #create" do
+  let(:client_app){ ClientApp.create(user: FactoryBot.create(:user), name: 't') }
+  describe "POST #create" do
     it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
+      post :create, params: {client_app_id: client_app.id}
+      expect(response).to have_http_status(:redirect)
     end
   end
 
-  describe "GET #destry" do
+  describe "GET #destroy" do
+    let(:app_token){AppToken.create(client_app: client_app)}
     it "returns http success" do
-      get :destry
-      expect(response).to have_http_status(:success)
+      delete :destroy, params: {client_app_id: client_app.id, id: app_token.id}
+      expect(response).to have_http_status(:redirect)
     end
   end
 
