@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AppTokensController < ApplicationController
   before_action :find_client_app
 
@@ -7,7 +9,7 @@ class AppTokensController < ApplicationController
   end
 
   def create
-    @app_token= @client_app.app_tokens.build
+    @app_token = @client_app.app_tokens.build
     if @app_token.save
       redirect_to edit_client_app_path(@client_app)
     else

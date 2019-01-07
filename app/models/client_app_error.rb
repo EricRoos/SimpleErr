@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class ClientAppError < ApplicationRecord
   include ActionView::Helpers::DateHelper
   belongs_to :client_app
 
   after_create :notify_parties
 
-  scope :recent, -> { where("created_at >= ? ", Time.current.utc - 5.days).order("created_at desc") }
+  scope :recent, -> { where('created_at >= ? ', Time.current.utc - 5.days).order('created_at desc') }
 
   validates_presence_of :message, :exception_name
 

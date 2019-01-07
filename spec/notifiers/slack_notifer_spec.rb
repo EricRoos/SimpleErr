@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 WEBHOOK_PATH = 'https://hooks.slack.com/services/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'
@@ -5,8 +7,8 @@ WEBHOOK_PATH = 'https://hooks.slack.com/services/T9JCZLPPA/BF4MYTNQ7/cJ4Ssv1tMpM
 describe SlackNotifier do
   describe '#notify', :vcr do
     let(:message) { 'Test Message' }
-    let(:webhook_path) { WEBHOOK_PATH } 
-    subject { described_class.new.notify(message, webhook_path) } 
+    let(:webhook_path) { WEBHOOK_PATH }
+    subject { described_class.new.notify(message, webhook_path) }
     context 'with a valid message' do
       it { is_expected.to be true }
     end
@@ -21,7 +23,7 @@ describe SlackNotifier do
     context 'the connection throws an exception' do
       before do
         allow_any_instance_of(Faraday::Connection).to receive(:post).and_raise(Faraday::ConnectionFailed, 'bad')
-      end 
+      end
       it { is_expected.to be false }
     end
   end

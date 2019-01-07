@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'app_tokens/create'
   get 'app_tokens/destry'

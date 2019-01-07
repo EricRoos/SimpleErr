@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateClientAppErrors < ActiveRecord::Migration[5.2]
   def change
     create_table :client_app_errors do |t|
