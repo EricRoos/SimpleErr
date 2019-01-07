@@ -3,6 +3,8 @@
 class StaticController < ApplicationController
   before_action :authenticate_user!
   def welcome
-    @apps = current_user.client_apps if user_signed_in?
+    if(user_signed_in?)
+      redirect_to client_apps_path
+    end
   end
 end
