@@ -11,11 +11,12 @@ RSpec.describe AppTokensController, type: :controller do
     end
   end
 
-  describe 'GET #destroy' do
+  describe 'delete #destroy' do
     let(:app_token) { AppToken.create(client_app: client_app) }
-    it 'returns http success' do
+    before do
       delete :destroy, params: { client_app_id: client_app.id, id: app_token.id }
-      expect(response).to have_http_status(:redirect)
     end
+    subject { response }
+    it { is_expected.to have_http_status(:redirect) }
   end
 end
