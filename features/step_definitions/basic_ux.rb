@@ -11,3 +11,7 @@ end
 Then('I should see {string}') do |string|
   page.should have_content(string)
 end
+
+When("I click on {string}") do |string|
+  click_on(string)
+end
