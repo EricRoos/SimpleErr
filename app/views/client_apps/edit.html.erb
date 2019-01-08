@@ -6,12 +6,13 @@
     </div>
     <div class="col s12">
       <h5>App Token</h5>
-      <% if @client_app.app_tokens.last %>
+      <% app_token = @client_app.app_tokens.last %>
+      <% if app_token %>
         <div>
-          <pre><%= @client_app.app_tokens.last.token %></pre>
+          <pre><%= app_token.token %></pre>
         </div>
         <div>
-          <%= link_to 'Refresh', client_app_app_token_path(@client_app, @client_app.app_tokens.last), method: :delete, class: 'btn' %>
+          <%= link_to 'Refresh', client_app_app_token_path(@client_app, app_token), method: :delete, class: "btn #{app_token.can_regenerate? ? '' : 'disabled'}" %>
         </div>
       <% else %>
         <%= link_to 'Generate Token', client_app_app_tokens_path(@client_app), method: :post, class: 'btn' %>

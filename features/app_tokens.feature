@@ -1,4 +1,4 @@
-Feature: Account Registration
+Feature: App Tokens
   In order to integrate apps I need an app token
 
   Scenario: Creating
@@ -9,7 +9,7 @@ Feature: Account Registration
     And I click on 'Generate Token'
     Then I should see "Generated a new token"
 
-  Scenario: Creating
+  Scenario: Refreshing
     Given I am registered
     And I have a client app
     And I have an existing app token
